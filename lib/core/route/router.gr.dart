@@ -12,7 +12,7 @@ import 'package:auto_route/auto_route.dart' as _i5;
 import 'package:flutter_case_umitmutluu/core/exception/error_page.dart' as _i2;
 import 'package:flutter_case_umitmutluu/core/route/stacks/home_stack.dart'
     as _i4;
-import 'package:flutter_case_umitmutluu/presentation/pages/basket/view/basket_page.dart'
+import 'package:flutter_case_umitmutluu/presentation/pages/basket/view/flutter_painter_image_editor.dart'
     as _i1;
 import 'package:flutter_case_umitmutluu/presentation/pages/home/view/home_page.dart'
     as _i3;

@@ -51,10 +51,11 @@ dependencies:
 #  painter: ^2.0.0
   flutter_painter_v2: ^2.0.1
   image_gallery_saver: ^2.0.3
-  image_editor: ^1.3.0
+  image_editor_plus:
+    path : ../image_editor_plus
+#  image_editor: ^1.3.0
 #  erase_restore: ^0.0.1
   image_picker: ^1.0.4
-  image: ^4.1.3
   extended_image: ^8.0.2
   oktoast: ^3.1.5
   image_size_getter: ^2.1.2

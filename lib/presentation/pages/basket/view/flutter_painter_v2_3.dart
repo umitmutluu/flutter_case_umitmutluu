@@ -1,3 +1,4 @@
+/*
 import 'dart:io';
 import 'dart:ui'as ui;
 
@@ -37,8 +38,6 @@ class _BasketPageState extends State<BasketPage> {
   Future<void> getImage() async {
     final pickedFile = await imagePicker.pickImage(
       source: ImageSource.gallery,
-      maxWidth: 200,
-      maxHeight: 200,
     );
     if (pickedFile != null) {
       imagePathNotifier.value = pickedFile.path;
@@ -125,49 +124,51 @@ class _BasketPageState extends State<BasketPage> {
             );
           }
           if (state.status == BasketStatus.success) {
-            return ValueListenableBuilder<PainterControllerValue>(
-                valueListenable: controller,
-                child: const Text("Flutter Painter Example"),
-                builder: (context, _, child) {
-                  return Stack(children: [
-                    ValueListenableBuilder(
-                        valueListenable: imagePathNotifier,
-                        builder: (context, val, _) {
-                          return val != ''
-                              ? Positioned.fill(
-                            child: Center(
-                              child: AspectRatio(
-                                aspectRatio: backgroundImage!.width /
-                                    backgroundImage!.height,
-                                child: FlutterPainter(
-                                  controller: controller,
+            return Expanded(
+              child: ValueListenableBuilder<PainterControllerValue>(
+                  valueListenable: controller,
+                  child: const Text("Flutter Painter Example"),
+                  builder: (context, _, child) {
+                    return Stack(children: [
+                      ValueListenableBuilder(
+                          valueListenable: imagePathNotifier,
+                          builder: (context, val, _) {
+                            return val != ''
+                                ? Positioned.fill(
+                              child: Center(
+                                child: AspectRatio(
+                                  aspectRatio: backgroundImage!.width /
+                                      backgroundImage!.height,
+                                  child: FlutterPainter(
+                                    controller: controller,
+                                  ),
                                 ),
                               ),
-                            ),
-                          )
-                              : GestureDetector(
-                            onTap: getImage,
-                            child: Container(
-                                color: Colors.cyanAccent,
-                                width: 300,
-                                height: 300),
-                          );
-                        }),
-                    Positioned(
-                      bottom: 0,
-                      right: 0,
-                      left: 0,
-                      child: ValueListenableBuilder(
-                        valueListenable: controller,
-                        builder: (context, _, __) => Slider.adaptive(
-                            min: 2,
-                            max: 25,
-                            value: controller.freeStyleStrokeWidth,
-                            onChanged: setFreeStyleStrokeWidth),
+                            )
+                                : GestureDetector(
+                              onTap: getImage,
+                              child: Container(
+                                  color: Colors.cyanAccent,
+                                  width: 300,
+                                  height: 300),
+                            );
+                          }),
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        left: 0,
+                        child: ValueListenableBuilder(
+                          valueListenable: controller,
+                          builder: (context, _, __) => Slider.adaptive(
+                              min: 2,
+                              max: 25,
+                              value: controller.freeStyleStrokeWidth,
+                              onChanged: setFreeStyleStrokeWidth),
+                        ),
                       ),
-                    ),
-                  ]);
-                });
+                    ]);
+                  }),
+            );
           }
           return ErrorWidget('Error');
         },
@@ -277,3 +278,4 @@ class _BasketPageState extends State<BasketPage> {
     controller.freeStyleStrokeWidth = value;
   }
 }
+*/
